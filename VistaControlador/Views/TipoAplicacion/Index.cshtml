@@ -1,0 +1,57 @@
+﻿@model IEnumerable<VistaControlador.Models.TipoAplicacion>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class-"container p-3">
+    <div class-"row pt-4">
+        <div class="col-6">
+            <h2 class="text-warning">Tipos de aplicacion</h2>
+         </div>
+        <div class="col-6">
+            <a asp-controller="TipoAplicacion" asp-action="Crear" class="btn btn-primary">Nuevo Tipo Aplicacion</a>
+         </div>
+    </div>
+    <br/>
+
+
+    @if (Model.Count()>0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre 
+                    </th>
+                    
+                    <th>
+                       
+
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th class="text-primary" width="50%">@item.Nombre</th>
+                        
+                        <th></th>
+                    </tr>
+                }
+
+
+            </tbody>
+
+
+        </table>
+    }
+    else
+    {
+        <p>No hay Tipos de Aplicacion</p>
+    }
+
+</div>
